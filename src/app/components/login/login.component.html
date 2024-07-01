@@ -1,13 +1,41 @@
-<section class="login">
-    <div class="login__main-texts">
+<section class="login-section">
+    <div class="main-texts-wrapper">
         <h1>Login do Agente</h1>
         <p>Bem vindo de volta! Digite suas credenciais para entrar no sistema</p>
     </div>
 
-    <div class="login__form">
-        <form>
-            <input class="login__input" placeholder="Nome do usuário" />
-            <input class="login__input" placeholder="Senha" />
+    <div class="form-wrapper">
+        <form #formControl="ngForm" (submit)="onFormSubmit(formControl)">
+            <input 
+                type="text"
+                placeholder="Nome do usuário"
+                name="username"
+                [(ngModel)]="username"
+                #usernameControl="ngModel"
+                required
+            />
+            <p 
+                class="input-error-text"
+                [class.display-none]="usernameControl.hasError('required') && usernameControl.touched"
+            >
+                O nome de usuário é <strong>obrigatório</strong>
+            </p>
+            
+            <input 
+                type="password"
+                placeholder="Senha" 
+                name="password"
+                [(ngModel)]="password"
+                #passwordControl="ngModel"
+                required
+            />
+            <p 
+                class="input-error-text"
+                [class.display-none]="passwordControl.hasError('required') && passwordControl.touched"
+            >
+                A senha é <strong>obrigatória</strong>
+            </p>
+
             <button class="login__button" type="submit">Entrar</button>
         </form>
     </div>
