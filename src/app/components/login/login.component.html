@@ -6,29 +6,39 @@
 
     <div class="form-wrapper">
         <form #formControl="ngForm" (submit)="onFormSubmit(formControl)">
-            <input 
-                type="text"
-                placeholder="Nome do usuário"
-                name="username"
-                [(ngModel)]="username"
-                #usernameControl="ngModel"
-                required
-            />
+            <label for="username">Usuário</label>
+            <div class="input-wrapper">
+                <input 
+                    type="text"
+                    placeholder="user@123"
+                    name="username"
+                    id="username"
+                    [(ngModel)]="username"
+                    #usernameControl="ngModel"
+                    required
+                />
+                <img src="assets/svg/user.svg" />
+            </div>
             <p 
                 class="input-error-text"
                 [class.display-none]="usernameControl.hasError('required') && usernameControl.touched"
             >
-                O nome de usuário é <strong>obrigatório</strong>
+                O usuário é <strong>obrigatório</strong>
             </p>
             
-            <input 
-                type="password"
-                placeholder="Senha" 
-                name="password"
-                [(ngModel)]="password"
-                #passwordControl="ngModel"
-                required
-            />
+            <label for="password">Senha</label>
+            <div class="input-wrapper">
+                <input 
+                    type="password"
+                    placeholder="Digita a sua senha" 
+                    name="password"
+                    id="password"
+                    [(ngModel)]="password"
+                    #passwordControl="ngModel"
+                    required
+                />
+                <img src="assets/svg/lock.svg" />
+            </div>
             <p 
                 class="input-error-text"
                 [class.display-none]="passwordControl.hasError('required') && passwordControl.touched"
@@ -36,7 +46,7 @@
                 A senha é <strong>obrigatória</strong>
             </p>
 
-            <button class="login__button" type="submit">Entrar</button>
+            <button type="submit">Entrar</button>
         </form>
     </div>
 </section>
