@@ -46,7 +46,9 @@
                 A senha é <strong>obrigatória</strong>
             </p>
 
-            <button type="submit">Entrar</button>
+            <button type="submit"
+                [disabled]="formControl.invalid"
+            >Entrar</button>
         </form>
     </div>
 </section>
