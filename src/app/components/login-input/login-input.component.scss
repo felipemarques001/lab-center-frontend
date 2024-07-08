@@ -1,0 +1,41 @@
+@import "../../../styles/variables.scss";
+
+label {
+    color: $secondary-text-color;
+    cursor: text;
+    font-size: 16px;
+}
+
+.input-wrapper {
+    display: flex;
+    
+    input {
+        border: 1px solid $light-gray-color;
+        border-right: 0;
+        border-radius: 5px 0 0 5px;
+        width: 100%;
+        padding: 12px 10px;
+        font-size: 18px;
+        outline: 0;
+    }
+
+    img {
+        background-color: $primary-color;
+        width: 45px;
+        padding: 5px;
+        border-radius: 0 5px 5px 0;
+    }
+}
+
+.input-error-text {
+    color: $red-text-color;
+    opacity: 0;
+    font-size: 16px;
+    padding: 0;
+    transition: 0.3s;
+
+    &.display-none {
+        opacity: 1;
+        padding: 5px 0;
+    }
+}

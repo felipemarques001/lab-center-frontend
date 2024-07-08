@@ -1,0 +1,21 @@
+<div>
+    <label [for]="inputId">{{ labelText }}</label>
+    <div class="input-wrapper">
+        <input 
+            [type]="inputType"
+            [placeholder]="placeholder"
+            [name]="inputName"
+            [id]="inputId"
+            ngModel
+            #inputControl="ngModel"
+            required
+        />
+        <img [src]="imageSrc" />
+    </div>
+</div>
+<div 
+    class="input-error-text"
+    [class.display-none]="inputControl.hasError('required') && inputControl.touched"
+>
+    <ng-content></ng-content>
+</div>

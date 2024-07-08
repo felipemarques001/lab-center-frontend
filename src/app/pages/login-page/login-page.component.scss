@@ -9,6 +9,57 @@ main {
     min-width: 100vw;
     min-height: 100vh;
 
+    .login-section {
+        background-color: $white-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 500px;
+        height: 100vh;
+        padding: 50px;
+        border-radius: 16px;
+
+
+        .main-texts-wrapper {
+            color: $primary-text-color;
+            text-align: center;
+            margin-bottom: 30px;
+
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        .form-wrapper {
+            
+            button {
+                color: $white-color;
+                background-color: $primary-color;
+                border: 1px solid $primary-color;
+                border-radius: 5px;
+                font-size: 18px;
+                width: 100%;
+                padding: 12px 0;
+                margin-top: 10px;
+                transition: 0.5s;
+                cursor: pointer;
+
+                &:hover:not(:disabled) {
+                    color: $primary-color;
+                    background-color: #fff;
+                }
+
+                &:disabled {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
     .main-wrapper {
         flex-grow: 2;
         display: flex;

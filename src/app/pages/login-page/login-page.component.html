@@ -1,5 +1,44 @@
 <main>
-    <app-login></app-login>
+    <section class="login-section">
+        <div class="main-texts-wrapper">
+            <h1>Login do Agente</h1>
+            <p>Bem vindo de volta! Digite suas credenciais para entrar no sistema</p>
+        </div>
+    
+        <div class="form-wrapper">
+            <form #formControl="ngForm" >
+                <app-login-input
+                    labelText="Usuário"
+                    inputType="text"
+                    placeholder="user@123"
+                    inputName="username"
+                    inputId="usuario"
+                    imageSrc="assets/svg/user.svg"
+                >
+                    <p>O usuário é <strong>obrigatório</strong></p>
+                </app-login-input>
+    
+                <app-login-input
+                    labelText="Senha"
+                    inputType="password"
+                    placeholder="Digite a sua senha"
+                    inputName="password"
+                    inputId="senha"
+                    imageSrc="assets/svg/lock.svg"
+                >
+                    <p>A senha é <strong>obrigatória</strong></p>
+                </app-login-input>
+    
+                <button 
+                    type="submit"
+                    [disabled]="formControl.invalid"
+                >
+                    Entrar
+                </button>
+            </form>
+        </div>
+    </section>
+
     <section class="main-wrapper">
         <h1>LabCenter</h1>
         <img src="assets/svg/login-illustration.svg" />
