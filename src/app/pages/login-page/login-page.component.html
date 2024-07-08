@@ -6,7 +6,7 @@
         </div>
     
         <div class="form-wrapper">
-            <form #formControl="ngForm" >
+            <form #formControl="ngForm" (submit)="submit(formControl)">
                 <app-login-input
                     labelText="Usuário"
                     inputType="text"
